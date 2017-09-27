@@ -25,6 +25,7 @@ SECRET_KEY = '(&t_ptypxi9-5zj=y4q$@0jif%aa)6wj)ffz5(j@iaudwd&lhf'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# private ip of vagrant
 ALLOWED_HOSTS = ['192.168.33.9']
 
 
@@ -76,8 +77,12 @@ WSGI_APPLICATION = 'pyProject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+	'ENGINE': 'django.db.backends.mysql',
+	'NAME': 'test_db',
+	'USER': 'vagrant',
+	'PASSWORD': 'vagrant',
     }
 }
 
